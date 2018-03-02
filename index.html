@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.lumen.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+</head>
+<body>
+<header>
+
+</header>
+<main>
+    <div class="container">
+        <h1>Typescript</h1>
+        <section class="row">
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Type Basics</h2>
+                    </div>
+                    <code class="card-body">
+                        <span class="comment">// string<br></span>
+                        let myName = 'Max';<br>
+                        myName = 28; <span class="comment">// Return an Error : 28 is not not assignable to type 'string'<br></span>
+                        <br>
+                        <span class="comment">// number<br></span>
+                        let myAge = 34;<br>
+                        myAge = 'Max'; <span
+                            class="comment">// Return an Error : Max is not assignable to type 'number'<br></span>
+                        <br>
+                        <span class="comment">// boolean<br></span>
+                        let hasHobbies = true;<br>
+                        hasHobbies = 0; <span class="comment">// Return an Error : 1 is not assignable to type 'boolean'<br></span>
+                    </code>
+                </div> <!-- card -->
+            </div>  <!-- bs col -->
+
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Explict Type</h2>
+                    </div>
+                    <div class="card-body">
+                        <code>
+                            <span class="comment">// let myRealAge; // <-- Any<br></span>
+                            let myRealAge: number; <span class="comment">// <-- number<br></span><br>
+                            <span class="comment">//myRealAge = 27;<br></span>
+                            myRealAge = '27'; <span class="comment"><br>// if myRealAge have assignment Number this line was reported an error of assignment.</span><br><br>
+                            <span class="comment">// Array type</span><br>
+                            let hobbies = ["Cooking", "Sports", "Video Games"];<br>
+                            hobbies = [100]; <span class="comment">// Return an Error Type number[] is not assignable to type string[]</span><br>
+
+                            let myHobbies: any[] = ["Cooking", "Sport", "Video Games"];<br>
+                            myHobbies = [100]; <span class="comment">// <== Good Practise</span>
+                        </code>
+                        <p class="alert alert-info mt-2">The <code>[]</code> is important to define an array for
+                            example: </p>
+                        <code>
+                            let myHobbies: any[] = ["Cooking", "Sport", "Video Games"];<br>
+                            myHobbies = 100; <span class="comment">// <== Return a error Type number is not assignable to type 'any[]'</span>
+                        </code>
+                        <code>
+                            let myHobbies: any = ["Cooking", "Sport", "Video Games"];<br>
+                            myHobbies = [100]; <span class="comment">// <== Return a error Type number is not assignable to type 'any[]'</span>
+                        </code>
+                    </div>
+                </div> <!-- card -->
+            </div> <!-- bs col -->
+        </section> <!-- row -->
+    </div>
+</main>
+<footer>
+
+</footer>
+<script type="application/javascript" src="assets/js/index.js"></script>
+</body>
+</html>
