@@ -18,3 +18,19 @@ var hobbies = ["Cooking", "Sports", "Video Games"];
 var myHobbies = ["Cooking", "Sport", "Video Games"];
 console.log('myHobbies return : ', myHobbies); // <== Good Practise‡
 console.log('type of myHobbies: ', typeof myHobbies); // <== Good Practise‡
+// tuples
+var address = ["Superstreet", 99]; // Order of types is very important.
+// Enum
+var Color;
+(function (Color) {
+    Color[Color["Gray"] = 0] = "Gray";
+    Color[Color["Green"] = 1] = "Green";
+    Color[Color["Blue"] = 2] = "Blue";
+})(Color || (Color = {}));
+var myColor = Color.Green;
+console.log(myColor); // Return 1 = the index
+// Any
+var car = "BMW";
+console.log('let car : any = "BMW" is a ', typeof car);
+car = { "brand": "BMW", "model": "Z3", "year": 2013, "doors": 5 };
+console.log('car = { "brand" : "BMW",  "model": "Z3", "year": "2013", "doors": 5 } is an ', typeof car);

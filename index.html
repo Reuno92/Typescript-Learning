@@ -12,14 +12,16 @@
 </header>
 <main>
     <div class="container">
+
         <h1>Typescript</h1>
-        <section class="row">
-            <div class="col-12 col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Type Basics</h2>
-                    </div>
-                    <code class="card-body">
+
+        <section class="card-columns">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Type Basics</h2>
+                </div>
+                <div class="card-body">
+                    <code>
                         <span class="comment">// string<br></span>
                         let myName = 'Max';<br>
                         myName = 28; <span class="comment">// Return an Error : 28 is not not assignable to type 'string'<br></span>
@@ -33,40 +35,114 @@
                         let hasHobbies = true;<br>
                         hasHobbies = 0; <span class="comment">// Return an Error : 1 is not assignable to type 'boolean'<br></span>
                     </code>
-                </div> <!-- card -->
-            </div>  <!-- bs col -->
+                </div>
+            </div> <!-- card -->
 
-            <div class="col-12 col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Explict Type</h2>
-                    </div>
-                    <div class="card-body">
-                        <code>
-                            <span class="comment">// let myRealAge; // <-- Any<br></span>
-                            let myRealAge: number; <span class="comment">// <-- number<br></span><br>
-                            <span class="comment">//myRealAge = 27;<br></span>
-                            myRealAge = '27'; <span class="comment"><br>// if myRealAge have assignment Number this line was reported an error of assignment.</span><br><br>
-                            <span class="comment">// Array type</span><br>
-                            let hobbies = ["Cooking", "Sports", "Video Games"];<br>
-                            hobbies = [100]; <span class="comment">// Return an Error Type number[] is not assignable to type string[]</span><br>
 
-                            let myHobbies: any[] = ["Cooking", "Sport", "Video Games"];<br>
-                            myHobbies = [100]; <span class="comment">// <== Good Practise</span>
-                        </code>
-                        <p class="alert alert-info mt-2">The <code>[]</code> is important to define an array for
-                            example: </p>
-                        <code>
-                            let myHobbies: any[] = ["Cooking", "Sport", "Video Games"];<br>
-                            myHobbies = 100; <span class="comment">// <== Return a error Type number is not assignable to type 'any[]'</span>
-                        </code>
-                        <code>
-                            let myHobbies: any = ["Cooking", "Sport", "Video Games"];<br>
-                            myHobbies = [100]; <span class="comment">// <== Return a error Type number is not assignable to type 'any[]'</span>
-                        </code>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Explict Type</h2>
+                </div>
+                <div class="card-body">
+                    <code>
+                        <span class="comment">// let myRealAge; // <-- Any<br></span>
+                        let myRealAge: number; <span class="comment">// <-- number<br></span><br>
+                        <span class="comment">//myRealAge = 27;<br></span>
+                        myRealAge = '27'; <span class="comment"><br>// if myRealAge have assignment Number this line was reported an error of assignment.</span><br><br>
+                    </code>
+                </div>
+            </div> <!-- card -->
+
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Array</h2>
+                </div>
+                <div class="card-body">
+                    <code>
+                        <span class="comment">// Array type</span><br>
+                        let hobbies = ["Cooking", "Sports", "Video Games"];<br>
+                        hobbies = [100]; <span class="comment">// Return an Error Type number[] is not assignable to type string[]</span><br>
+                    </code>
+                    <code>
+                        let myHobbies: any[] = ["Cooking", "Sport", "Video Games"];<br>
+                        myHobbies = [100]; <span class="comment">// <== Good Practise</span>
+                    </code>
+                    <p class="alert alert-info mt-2">The <code>[]</code> is important to define an array for
+                        example: </p>
+                    <code>
+                        let myHobbies: any[] = ["Cooking", "Sport", "Video Games"];<br>
+                        myHobbies = 100; <span class="comment">// <== Return a error Type number is not assignable to type 'any[]'</span>
+                    </code>
+                    <code>
+                        let myHobbies: any = ["Cooking", "Sport", "Video Games"];<br>
+                        myHobbies = [100]; <span class="comment">// <== Return a error Type number is not assignable to type 'any[]'</span>
+                    </code>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Tupples</h2>
+                </div>
+                <div class="card-body">
+                    <code>
+                        <span class="comment">// tuples</span><br>
+                        let address: [string, number] = ["Superstreet", 99];
+                    </code>
+
+                    <div class="alert alert-danger mt-2">
+                        <b>Attention</b> Order of types is very important.
                     </div>
-                </div> <!-- card -->
-            </div> <!-- bs col -->
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Enum</h2>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-success">
+                        New Type in Typescript : Enum
+                    </div>
+
+                    <h3>First Example :</h3>
+                    <code><br>
+                        enum Color {<br>
+                        Gray,<br>
+                        Green,<br>
+                        Blue<br>
+                        }<br>
+                        <br>
+                        let myColor: Color = Color.Green;<br>
+                        console.log(myColor); <span class="comment">// 1 :the index</span>
+                    </code>
+                    <h3 class="mt-4">Second Example :</h3>
+                    <code><br>
+                        enum Color {<br>
+                        Gray,<br>
+                        Green = 100,<br>
+                        Blue<br>
+                        }<br>
+                        <br>
+                        console.log(Color.Green); <span class="comment">// Return 100</span><br>
+                        console.log(Color.Blue); <span class="comment">// Return 101</span><br>
+                    </code>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h2>The "Any" Type</h2>
+                </div>
+                <div class="card-body">
+                    <code>
+                        <span class="comment">// Any</span><br>
+                        let car : any = "BMW"; <span class="comment">// typeOf car = string</span><br>
+                        car = { "brand" : "BMW", "model": "Z3", "year": 2013, "doors": 5 }; <span class="comment">// typeOf car = Object</span><br>
+                    </code>
+                </div>
+            </div>
         </section> <!-- row -->
     </div>
 </main>

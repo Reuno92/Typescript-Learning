@@ -24,3 +24,22 @@ let hobbies = ["Cooking", "Sports", "Video Games"];
 let myHobbies: any[] = ["Cooking", "Sport", "Video Games"];
 console.log('myHobbies return : ', myHobbies); // <== Good Practise‡
 console.log('type of myHobbies: ', typeof myHobbies); // <== Good Practise‡
+
+// tuples
+let address: [string, number] = ["Superstreet", 99]; // Order of types is very important.
+
+// Enum
+enum Color {
+    Gray,
+    Green,
+    Blue
+}
+
+let myColor: Color = Color.Green;
+console.log(myColor); // Return 1 = the index
+
+// Any
+let car : any = "BMW";
+console.log('let car : any = "BMW" is a ', typeof car);
+car = { "brand" : "BMW",  "model": "Z3", "year": 2013, "doors": 5 };
+console.log('car = { "brand" : "BMW",  "model": "Z3", "year": "2013", "doors": 5 } is an ', typeof car);
